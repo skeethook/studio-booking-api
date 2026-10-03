@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: studio-booking-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
