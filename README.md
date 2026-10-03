@@ -2,12 +2,12 @@
 
 Домашнее задание № 6, FastAPI.
 
-Сервис онлайн-записи в студию. В нём есть каталог услуг, свободные слоты на день и управление записями. Данные хранятся в памяти и пропадают при перезапуске.
+Сервис онлайн-записи в студию. Каталог услуг, свободные слоты на день и управление записями. Данные хранятся в памяти и пропадают при перезапуске.
 
 Правила записи: слоты по часу с 10:00 до 18:00. У каждой категории услуг (hair, nails, brows, skin) свой мастер, поэтому слот занят только внутри своей категории. Записаться на прошедшую дату нельзя. Время внутри сегодняшнего дня не проверяется.
 
-Развёрнутый сервис: https://studio-booking-api.onrender.com
-Документация и запросы из браузера: https://studio-booking-api.onrender.com/docs
+Развёрнутый сервис: https://studio-booking-api-b7nd.onrender.com
+Документация и запросы из браузера: https://studio-booking-api-b7nd.onrender.com/docs
 
 Бесплатный хостинг засыпает, если 15 минут нет запросов. Первый запрос после паузы может идти до минуты.
 
@@ -39,7 +39,7 @@ uvicorn app.main:app --reload
 ## Пример POST-запроса
 
 ```bash
-curl -X POST https://studio-booking-api.onrender.com/bookings \
+curl -X POST https://studio-booking-api-b7nd.onrender.com/bookings \
   -H "Content-Type: application/json" \
   -d '{"client_name": "Иван", "phone": "+79991234567", "service_id": 3, "day": "2026-11-02", "time": "10:00", "comment": "demo"}'
 ```
@@ -69,7 +69,7 @@ curl -X POST https://studio-booking-api.onrender.com/bookings \
 
 ```bash
 python demo.py                                    # локально
-python demo.py https://studio-booking-api.onrender.com   # развёрнутый сервис
+python demo.py https://studio-booking-api-b7nd.onrender.com   # развёрнутый сервис
 ```
 
 Скрипту нужен пакет `httpx` (есть в `requirements-dev.txt`).
